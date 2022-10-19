@@ -292,3 +292,45 @@ Your branch is up to date with 'origin/dev'.
 nothing to commit, working tree clean
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+## bundle 2
+### exercise 1
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  home.html  README.md  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ touch services.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ code .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add services page"
+[ft/bundle-2 01b9e58] add services page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 services.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push -u
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 472 bytes | 236.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/bundle-2
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+Branch 'ft/bundle-2' set up to track remote branch 'ft/bundle-2' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
