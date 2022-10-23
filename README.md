@@ -334,3 +334,153 @@ To github.com:izzett222/git-exercises.git
 Branch 'ft/bundle-2' set up to track remote branch 'ft/bundle-2' from 'origin'.
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+### exercise 2
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git pull
+Already up to date.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/service-redesign
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi services.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "change the service list"
+[ft/service-redesign 4bf0aff] change the service list
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 396 bytes | 132.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/service-redesign
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+Branch 'ft/service-redesign' set up to track remote branch 'ft/service-redesign' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi services.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "modify the service list"
+[main c6f7632] modify the service list
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 418 bytes | 418.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:izzett222/git-exercises.git
+   8ea7ed6..c6f7632  main -> main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/service-redesign
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git diff main
+diff --git a/services.html b/services.html
+index c23beaa..6ac3fbd 100644
+--- a/services.html
++++ b/services.html
+@@ -7,12 +7,11 @@
+     <title>services</title>
+ </head>
+ <body>
+-       <h3>these are our services, you can learn more <a href="#">here</a></h3>
+-    <ol>
+-       <li>ads</li>
+-       <li>graphic design</li>
+-       <li>backend develop</li>
+-       <li>ui design</li>
+-    </ol>
++    <h2>these are our services right now</h2>
++    <ul>
++       <li>web design</li>
++       <li>cooking</li>
++       <li>fashion design</li>
++    </ul>
+ </body>
+ </html>
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi services.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit
+[ft/service-redesign 86ed0a7] Merge branch 'main' into ft/service-redesign
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit 86ed0a7f33459af8c8bbe710e201ea0c0c48bed5 (HEAD -> ft/service-redesign)
+Merge: 4bf0aff c6f7632
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:21:38 2022 +0200
+
+    Merge branch 'main' into ft/service-redesign
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (origin/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 4bf0aff5c1d3197022c9bc18db38d838f6792293 (origin/ft/service-redesign)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:00:24 2022 +0200
+
+    change the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+    Merge pull request #3 from izzett222/revert-2-ft/service-redesign
+
+    Revert "Ft/service redesign"
+
+commit 71c1b48d14640fc5922537cd556b454976c52a77 (origin/revert-2-ft/service-redesign)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 435 bytes | 108.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:izzett222/git-exercises.git
+   4bf0aff..86ed0a7  ft/service-redesign -> ft/service-redesign
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
