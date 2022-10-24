@@ -997,3 +997,47 @@ To github.com:izzett222/git-exercises.git
 Branch 'ft/home-page-redesign' set up to track remote branch 'ft/home-page-redesign' from 'origin'.
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+## bundle 4
+### exercise 1
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/home-page-redesign
+Your branch is up to date with 'origin/ft/home-page-redesign'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git remote add git-copy git@github.com:izzett222/git-exercises-copy.git
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git remote -v
+git-copy        git@github.com:izzett222/git-exercises-copy.git (fetch)
+git-copy        git@github.com:izzett222/git-exercises-copy.git (push)
+origin  git@github.com:izzett222/git-exercises.git (fetch)
+origin  git@github.com:izzett222/git-exercises.git (push)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi home.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add homepage header section"
+[main b6c1bd1] add homepage header section
+ 1 file changed, 1 insertion(+)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 321 bytes | 321.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:izzett222/git-exercises.git
+   40b138e..b6c1bd1  main -> main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push git-copy main
+Enumerating objects: 35, done.
+Counting objects: 100% (35/35), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (32/32), done.
+Writing objects: 100% (35/35), 5.01 KiB | 732.00 KiB/s, done.
+Total 35 (delta 15), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (15/15), done.
+To github.com:izzett222/git-exercises-copy.git
+ * [new branch]      main -> main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
