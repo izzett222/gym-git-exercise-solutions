@@ -484,3 +484,324 @@ To github.com:izzett222/git-exercises.git
    4bf0aff..86ed0a7  ft/service-redesign -> ft/service-redesign
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+## bundle 3
+### exercise 1
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/service-redesign
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ code .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/team-page
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add the team page"
+[ft/team-page 02310a2] add the team page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 team.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 471 bytes | 235.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/team-page
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/team-page -> ft/team-page
+Branch 'ft/team-page' set up to track remote branch 'ft/team-page' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git branch ft/contact-page
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/service-redesign
+  ft/team-page
+* main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit 02310a23600506b37d5059b79abf9a0a4379948e (HEAD -> ft/team-page, origin/ft/team-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 09:39:49 2022 +0200
+
+    add the team page
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (origin/main, main, ft/contact-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+    Merge pull request #3 from izzett222/revert-2-ft/service-redesign
+
+    Revert "Ft/service redesign"
+
+commit 71c1b48d14640fc5922537cd556b454976c52a77 (origin/revert-2-ft/service-redesign)
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:33 2022 -0700
+
+    Revert "Ft/service redesign"
+
+commit dc53f3abeca1b6976b563e6cd0eafdb2b821a8e4
+Merge: c7e482c 2d1abd5
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/team-page
+Your branch is up to date with 'origin/ft/team-page'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (HEAD -> ft/contact-page, origin/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+    Merge pull request #3 from izzett222/revert-2-ft/service-redesign
+
+    Revert "Ft/service redesign"
+
+commit 71c1b48d14640fc5922537cd556b454976c52a77 (origin/revert-2-ft/service-redesign)
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:33 2022 -0700
+
+    Revert "Ft/service redesign"
+
+commit dc53f3abeca1b6976b563e6cd0eafdb2b821a8e4
+Merge: c7e482c 2d1abd5
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Thu Oct 20 12:02:21 2022 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit c7e482cb492980a4471af00043d767762f58c25f
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git cherry-pick 02310a23600506b37d5059b79abf9a0a4379948e
+[ft/contact-page 8c085de] add the team page
+ Date: Mon Oct 24 09:39:49 2022 +0200
+ 1 file changed, 12 insertions(+)
+ create mode 100644 team.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit 8c085de5e7568344f2bc7f3702399e369363bcab (HEAD -> ft/contact-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 09:39:49 2022 +0200
+
+    add the team page
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (origin/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+    Merge pull request #3 from izzett222/revert-2-ft/service-redesign
+
+    Revert "Ft/service redesign"
+
+commit 71c1b48d14640fc5922537cd556b454976c52a77 (origin/revert-2-ft/service-redesign)
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:33 2022 -0700
+
+    Revert "Ft/service redesign"
+
+commit dc53f3abeca1b6976b563e6cd0eafdb2b821a8e4
+Merge: c7e482c 2d1abd5
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/contact-page
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  home.html  README.md  services.html  team.html  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/contact-page
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add contact page"
+[ft/contact-page fd56bcc] add contact page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 contact.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 742 bytes | 247.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/contact-page
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+Branch 'ft/contact-page' set up to track remote branch 'ft/contact-page' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/faq-page
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/faq-page
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        faq.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add faq.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add faq page"
+[ft/faq-page 6752eaa] add faq page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 faq.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 465 bytes | 465.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/faq-page
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+Branch 'ft/faq-page' set up to track remote branch 'ft/faq-page' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit 6752eaa838a924a29d38dd4093d7cb8e1e665004 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:31:33 2022 +0200
+
+    add faq page
+
+commit fd56bcce818b0a044a566fcddbd5c746878f0724 (origin/ft/contact-page, ft/contact-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:27:41 2022 +0200
+
+    add contact page
+
+commit 8c085de5e7568344f2bc7f3702399e369363bcab
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 09:39:49 2022 +0200
+
+    add the team page
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (origin/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/faq-page
+Your branch is up to date with 'origin/ft/faq-page'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git revert 02310a23600506b37d5059b79abf9a0a4379948e
+[ft/faq-page bad315c] Revert "add the team page"
+ 1 file changed, 12 deletions(-)
+ delete mode 100644 team.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit bad315c0a222ab402a22af915ba8f57da42f2c89 (HEAD -> ft/faq-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:47:42 2022 +0200
+
+    Revert "add the team page"
+
+    This reverts commit 02310a23600506b37d5059b79abf9a0a4379948e.
+
+commit 6752eaa838a924a29d38dd4093d7cb8e1e665004 (origin/ft/faq-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:31:33 2022 +0200
+
+    add faq page
+
+commit fd56bcce818b0a044a566fcddbd5c746878f0724 (origin/ft/contact-page, ft/contact-page)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:27:41 2022 +0200
+
+    add contact page
+
+commit 8c085de5e7568344f2bc7f3702399e369363bcab
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 09:39:49 2022 +0200
+
+    add the team page
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (origin/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  contact.html  faq.html  home.html  README.md  services.html  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 275 bytes | 275.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:izzett222/git-exercises.git
+   6752eaa..bad315c  ft/faq-page -> ft/faq-page
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
