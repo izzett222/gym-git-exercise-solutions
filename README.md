@@ -1041,3 +1041,129 @@ To github.com:izzett222/git-exercises-copy.git
  * [new branch]      main -> main
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+### exercise 2
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  home.html  README.md  services.html  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi home.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add footer to the home page"
+[ft/footer feb93d8] add footer to the home page
+ 1 file changed, 3 insertions(+)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi home.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/footer
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add a list of links to the footer on the homepage"
+[ft/footer 5a26d2e] add a list of links to the footer on the homepage
+ 1 file changed, 3 insertions(+)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push origin main
+Everything up-to-date
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/footer
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 640 bytes | 320.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/footer
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/footer -> ft/footer
+Branch 'ft/footer' set up to track remote branch 'ft/footer' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/squashing
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git merge --squash ft/footer
+Updating b6c1bd1..5a26d2e
+Fast-forward
+Squash commit -- not updating HEAD
+ home.html | 6 ++++++
+ 1 file changed, 6 insertions(+)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/squashing
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "footer changes squashing"
+[ft/squashing b8eadf7] footer changes squashing
+ 1 file changed, 6 insertions(+)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit b8eadf7191ec5e59d10efd06a4256f50a7cfdddb (HEAD -> ft/squashing)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 11:38:04 2022 +0200
+
+    footer changes squashing
+
+commit b6c1bd13622633bf1950e5eb5a0f0bb0ce462ca2 (origin/main, git-copy/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 11:14:08 2022 +0200
+
+    add homepage header section
+
+commit 40b138ea76110837914c8515c31e526a5b9ce969
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:56:59 2022 +0200
+
+    add welcome message on the homepage
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/squashing
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 382 bytes | 127.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/squashing
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/squashing -> ft/squashing
+Branch 'ft/squashing' set up to track remote branch 'ft/squashing' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
