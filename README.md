@@ -805,3 +805,195 @@ To github.com:izzett222/git-exercises.git
    6752eaa..bad315c  ft/faq-page -> ft/faq-page
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+### exercise 2
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/faq-page
+Your branch is up to date with 'origin/ft/faq-page'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  home.html  README.md  services.html  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi home.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit c6f7632923fad35faee5ae1a1395c91a376d1550 (HEAD -> main, origin/main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+    Merge pull request #3 from izzett222/revert-2-ft/service-redesign
+
+    Revert "Ft/service redesign"
+
+commit 71c1b48d14640fc5922537cd556b454976c52a77 (origin/revert-2-ft/service-redesign)
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:33 2022 -0700
+
+    Revert "Ft/service redesign"
+
+commit dc53f3abeca1b6976b563e6cd0eafdb2b821a8e4
+Merge: c7e482c 2d1abd5
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Thu Oct 20 12:02:21 2022 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit c7e482cb492980a4471af00043d767762f58c25f
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "add welcome message on the homepage"
+[main 40b138e] add welcome message on the homepage
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:izzett222/git-exercises.git
+   c6f7632..40b138e  main -> main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit 40b138ea76110837914c8515c31e526a5b9ce969 (HEAD -> main, origin/main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:56:59 2022 +0200
+
+    add welcome message on the homepage
+
+commit c6f7632923fad35faee5ae1a1395c91a376d1550
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Sun Oct 23 22:06:26 2022 +0200
+
+    modify the service list
+
+commit 8ea7ed6973251a2854fd972a1e2c34659d52fd97
+Merge: dc53f3a 71c1b48
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:47 2022 -0700
+
+    Merge pull request #3 from izzett222/revert-2-ft/service-redesign
+
+    Revert "Ft/service redesign"
+
+commit 71c1b48d14640fc5922537cd556b454976c52a77 (origin/revert-2-ft/service-redesign)
+Author: izzett222 <51261911+izzett222@users.noreply.github.com>
+Date:   Thu Oct 20 03:06:33 2022 -0700
+
+    Revert "Ft/service redesign"
+
+commit dc53f3abeca1b6976b563e6cd0eafdb2b821a8e4
+Merge: c7e482c 2d1abd5
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git log
+commit fa1aaac7b445fb491e1d38eb4b17f5e6fdb2a901 (HEAD -> ft/home-page-redesign)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:47:42 2022 +0200
+
+    Revert "add the team page"
+
+    This reverts commit 02310a23600506b37d5059b79abf9a0a4379948e.
+
+commit 6b51be3c478b90b92bb1977e1f70da1915700a38
+Author: izzett222 <iizzeddin62@gmail.com>
+
+    Revert "add the team page"
+
+    This reverts commit 02310a23600506b37d5059b79abf9a0a4379948e.
+
+commit fa1aaac7b445fb491e1d38eb4b17f5e6fdb2a901 (HEAD -> ft/home-page-redesign)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:47:42 2022 +0200
+
+    Revert "add the team page"
+
+    This reverts commit 02310a23600506b37d5059b79abf9a0a4379948e.
+
+commit 6b51be3c478b90b92bb1977e1f70da1915700a38
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:31:33 2022 +0200
+
+    add faq page
+
+commit ebcc5121e24cb5068f09de3841849c59b3e7fbf4
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:27:41 2022 +0200
+
+    add contact page
+
+commit d8be263403a90c6b89062d4e22f0c424ec00ae9f
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 09:39:49 2022 +0200
+
+    add the team page
+
+commit 40b138ea76110837914c8515c31e526a5b9ce969 (origin/main, main)
+Author: izzett222 <iizzeddin62@gmail.com>
+Date:   Mon Oct 24 10:56:59 2022 +0200
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ vi home.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/home-page-redesign
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add ,
+fatal: pathspec ',' did not match any files
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add home.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/home-page-redesign
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "change welcome message on the homepage"
+[ft/home-page-redesign a657342] change welcome message on the homepage
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.62 KiB | 553.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/izzett222/git-exercises/pull/new/ft/home-page-redesign
+remote:
+To github.com:izzett222/git-exercises.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+Branch 'ft/home-page-redesign' set up to track remote branch 'ft/home-page-redesign' from 'origin'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
