@@ -1167,3 +1167,51 @@ To github.com:izzett222/git-exercises.git
 Branch 'ft/squashing' set up to track remote branch 'ft/squashing' from 'origin'.
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
+## bundle 5
+### exercise 2
+```bash
+thegym@DESKTOP-JIQ9UQP:~$ cd thegym/
+thegym@DESKTOP-JIQ9UQP:~/thegym$ git clone git@github.com:izzett222/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (107/107), done.
+remote: Compressing objects: 100% (101/101), done.
+remote: Total 107 (delta 5), reused 104 (delta 4), pack-reused 0
+Receiving objects: 100% (107/107), 1.95 MiB | 1.73 MiB/s, done.
+Resolving deltas: 100% (5/5), done.
+thegym@DESKTOP-JIQ9UQP:~/thegym$ cd git-cafe-exercise/
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ ls
+bat  css  images  index-1.html  index-2.html  index-3.html  index-4.html  index.html  js  README.md
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ vi index.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ code .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ git commit -m "change the homepage main title"
+[main 36fb092] change the homepage main title
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:izzett222/git-cafe-exercise.git
+   d1d3f9c..36fb092  main -> main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-cafe-exercise$
+```
