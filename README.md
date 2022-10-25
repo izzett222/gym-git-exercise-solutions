@@ -1168,6 +1168,61 @@ Branch 'ft/squashing' set up to track remote branch 'ft/squashing' from 'origin'
 thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
 ```
 ## bundle 5
+### exercise 1
+```bash
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch ft/squashing
+Your branch is up to date with 'origin/ft/squashing'.
+
+nothing to commit, working tree clean
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  home.html  README.md  services.html  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ mv home.html index.html
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ ls
+about.html  index.html  README.md  services.html  test
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ code .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git add .
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    home.html -> index.html
+
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git commit -m "rename home.html to index.html"
+[main 3b897ce] rename home.html to index.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename home.html => index.html (100%)
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 240 bytes | 240.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:izzett222/git-exercises.git
+   b6c1bd1..3b897ce  main -> main
+thegym@DESKTOP-JIQ9UQP:~/thegym/git-exercises$
+```
 ### exercise 2
 ```bash
 thegym@DESKTOP-JIQ9UQP:~$ cd thegym/
